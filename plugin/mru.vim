@@ -148,7 +148,7 @@
 "
 "       let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'  " For Unix
 "       let MRU_Exclude_Files = '^c:\\temp\\.*'           " For MS-Windows
-" 
+"
 " The specified pattern should be a Vim regular expression pattern.
 "
 " If you want to add only file names matching a set of patterns to the MRU
@@ -687,7 +687,7 @@ function! s:MRU_Open_Window(...)
                 \ :call <SID>MRU_Select_File_Cmd('edit,newtab')<CR>
     vnoremap <buffer> <silent> t
                 \ :call <SID>MRU_Select_File_Cmd('edit,newtab')<CR>
-    nnoremap <buffer> <silent> v
+    nnoremap <buffer> <silent> O
                 \ :call <SID>MRU_Select_File_Cmd('view,useopen')<CR>
     nnoremap <buffer> <silent> u :MRU<CR>
     nnoremap <buffer> <silent> <2-LeftMouse>
@@ -816,7 +816,7 @@ function! s:MRU_add_files_to_menu(prefix, file_list)
         " the beginning and end.
         if len > 30
             let dir_name = strpart(dir_name, 0, 10) .
-                        \ '...' . 
+                        \ '...' .
                         \ strpart(dir_name, len - 20)
         endif
         let esc_dir_name = escape(dir_name, ".\\" . s:esc_filename_chars)
